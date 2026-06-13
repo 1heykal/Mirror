@@ -1,0 +1,31 @@
+<article class="note-card note-card--mirror" *ngIf="note">
+    <div class="note-card__header">
+        <div class="note-card__header-content">
+            <h3 class="note-card__title">{{ note.title }}</h3>
+            <span class="note-card__date">{{ note.createdAt | date: 'short' }}</span>
+        </div>
+        <button class="note-card__delete-btn" (click)="onDeleteClick()" [disabled]="isDeleting" title="Delete note"
+            aria-label="Delete note">
+            <span class="delete-icon">×</span>
+        </button>
+    </div>
+
+    <p class="note-card__content">{{ note.content }}</p>
+</article>
+
+<!-- Delete Confirmation Modal -->
+<div class="delete-confirm" *ngIf="showDeleteConfirm">
+    <div class="delete-confirm__backdrop" (click)="onCancelDelete()"></div>
+    <div class="delete-confirm__modal">
+        <h4 class="delete-confirm__title">Delete note?</h4>
+        <p class="delete-confirm__message">This action cannot be undone.</p>
+        <div class="delete-confirm__actions">
+            <button class="delete-confirm__cancel" (click)="onCancelDelete()" [disabled]="isDeleting">
+                Cancel
+            </button>
+            <button class="delete-confirm__confirm" (click)="onConfirmDelete()" [disabled]="isDeleting">
+                {{ isDeleting ? 'Deleting...' : 'Delete' }}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<div class="notes-page">
+  <!-- Hero Section -->
+  <header class="notes-hero">
+    <div class="notes-hero__content">
+      <span class="notes-hero__eyebrow">Mirror</span>
+      <h1 class="notes-hero__title">Mirror</h1>
+      <p class="notes-hero__subtitle">A place where your thoughts reflect, settle, and sharpen.</p>
+    </div>
+  </header>
+
+  <div class="notes-container">
+    <!-- Search & Create Panel -->
+    <section class="notes-sidebar">
+      <div class="search-panel">
+        <input type="search" name="search" [(ngModel)]="searchTerm" placeholder="Search your notes..."
+          (input)="searchNotes()" class="search-input" />
+      </div>
+
+      <div class="composer-panel">
+        <h2 class="composer-panel__title">New Note</h2>
+        <app-create-note (noteCreated)="onNoteCreated($event)"></app-create-note>
+      </div>
+
+      <div class="ai-panel">
+        <h3 class="ai-panel__title">✨ Ask Your Brain</h3>
+        <form (ngSubmit)="ask()" class="ai-form">
+          <input type="text" name="ask" [(ngModel)]="question" placeholder="Ask a question..." [disabled]="isAsking"
+            class="ai-input" />
+          <button type="submit" [disabled]="!question.length || isAsking" class="ai-submit">
+            {{ isAsking ? 'Thinking...' : 'Ask'}}
+          </button>
+        </form>
+
+        <p *ngIf="isAsking" class="ai-loading" aria-live="polite">
+          <span class="spinner" aria-hidden="true"></span>
+          AI is thinking...
+        </p>
+
+        <p *ngIf="!isAsking && answer" class="ai-answer">{{ answer }}</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="notes-main">
+      <!-- Delete Message -->
+      <div *ngIf="deleteMessage" class="delete-message" [class.delete-message--error]="deleteMessage.type === 'error'">
+        {{ deleteMessage.text }}
+      </div>
+
+      <!-- Notes Grid -->
+      <section class="notes-grid">
+        <div *ngIf="notes.length; else noNotes" class="grid">
+          <app-note-card *ngFor="let note of notes" [note]="note" [isDeleting]="deletingNoteId === note.id"
+            (deleteRequested)="onDeleteNote($event)">
+          </app-note-card>
+        </div>
+        <ng-template #noNotes>
+          <div class="empty-state">
+            <p class="empty-state__message">No notes yet. Create one to get started!</p>
+          </div>
+        </ng-template>
+      </section>
+
+      <!-- Conversation History -->
+      <section *ngIf="history.length" class="history-section">
+        <h2 class="history-section__title">Conversation History</h2>
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Asked At</th>
+              <th>Question</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let entry of history; let i = index">
+              <tr class="history-row">
+                <td class="history-cell">{{ entry.askedAt | date: 'short' }}</td>
+                <td class="history-cell history-question">{{ entry.question }}</td>
+                <td class="history-cell history-action">
+                  <button (click)="toggleExpand(i)" class="expand-btn" [attr.aria-expanded]="expandedRows[i]">
+                    {{ expandedRows[i] ? '▼' : '▶' }}
+                  </button>
+                </td>
+              </tr>
+              <tr *ngIf="expandedRows[i]" class="answer-row">
+                <td colspan="3" class="answer-cell">
+                  <div class="answer-content">
+                    <strong>Answer:</strong>
+                    <p>{{ entry.answer }}</p>
+                  </div>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</div>

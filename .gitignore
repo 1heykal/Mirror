@@ -1,0 +1,17 @@
+# .NET
+api/bin/
+api/obj/
+api/.vs/
+
+# Angular
+web/node_modules/
+web/dist/
+
+# IDE
+.vs/
+.idea/
+
+# env / secrets
+.env
+appsettings*.json
+*.key
