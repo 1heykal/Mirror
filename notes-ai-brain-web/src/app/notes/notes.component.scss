@@ -87,6 +87,31 @@
   top: var(--spacing-xl);
   max-height: calc(100vh - var(--spacing-xl) * 2);
   overflow-y: auto;
+  padding-right: var(--spacing-sm);
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 90, 58, 0.38) transparent;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(168, 90, 58, 0.28);
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 90, 58, 0.42);
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
 }
 
 .search-panel {

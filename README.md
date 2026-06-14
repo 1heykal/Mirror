@@ -1,6 +1,6 @@
 # Mirror 🪞✨
 
-**Mirror** is an AI-powered note-taking application that turns your notes into conversations. 💬📝
+**Mirror** is a personal knowledge companion that transforms notes into conversations.
 
 Capture ideas, memories, and everyday thoughts, then explore them through natural language. Search your notes, ask questions about what you've written, and revisit past interactions through a seamless conversational experience.
 
@@ -8,13 +8,17 @@ Built with **Angular** 🅰️, **ASP.NET Core** ⚙️, **SQL Server** 🗄️,
 
 ---
 
-## 📸 Preview
+## 🎥 Demo
 
-> **📷 Screenshot Placeholder:** Add a hero image of the application dashboard here.
+![Mirror Demo](screenshots/walkthrough.gif)
 
-> **🎥 Demo Video Placeholder (Optional):** Add a GIF, YouTube link, or Loom walkthrough showcasing the app experience.
+Mirror allows you to capture thoughts, explore them through AI-powered conversations, and revisit previous interactions—all within a single experience.
 
-> **🚀 Live Demo Placeholder (Optional):** Add a deployment link once the application is publicly available.
+---
+
+## 📸 Snapshot
+
+![Mirror Home](screenshots/hero.png)
 
 ---
 
@@ -23,23 +27,20 @@ Built with **Angular** 🅰️, **ASP.NET Core** ⚙️, **SQL Server** 🗄️,
 ### 📝 Smart Notes
 
 - Create and manage notes with SQL Server persistence.
-- View and organize saved content instantly.
+- Organize and revisit your thoughts effortlessly.
 - Gracefully handle empty states.
-
-> **📷 Image Suggestion:** Screenshot of the notes list and note creation interface.
+- Delete notes that no longer matter.
 
 ---
 
 ### 🔍 Fast Search
 
 - Search notes using keywords.
-- Quickly find relevant information across your entries.
-
-> **📷 Image Suggestion:** Screenshot demonstrating the search functionality.
+- Quickly surface relevant information across your entries.
 
 ---
 
-### 🤖 AI-Powered Conversations
+### 🤖 Ask Your Brain
 
 Ask questions about your own notes in natural language:
 
@@ -51,29 +52,26 @@ Ask questions about your own notes in natural language:
 
 Mirror uses LLM integration to generate contextual answers based on your stored notes.
 
-> **📷 Image Suggestion:** Screenshot of the AI chat interface.
->
-> **🎥 Video Suggestion:** Short demo showing a question being asked and answered.
-
 ---
 
 ### 🕒 Conversation History
 
 - Save previous questions and AI responses.
 - Track interactions with timestamps.
-- Revisit past conversations anytime.
+- Revisit earlier conversations anytime.
 
-> **📷 Image Suggestion:** Screenshot of the conversation history view.
+![Conversation History](screenshots/history.png)
 
 ---
 
-### 🎨 Modern User Experience
+### 🎨 Thoughtful User Experience
 
 - Submit questions using the **Enter** key.
 - Loading indicators during AI responses.
 - Disabled actions while processing requests.
-- Clear and user-friendly error handling.
+- Friendly and informative error handling.
 - Automatic input clearing after submission.
+- Responsive layouts with attention to smaller screens.
 
 ---
 
@@ -94,7 +92,7 @@ Mirror uses LLM integration to generate contextual answers based on your stored 
 - HTML
 - CSS
 
-### 🤖 AI
+### 🤖 AI Integration
 
 - Large Language Model (LLM) integration for contextual question answering and note exploration.
 
@@ -102,7 +100,7 @@ Mirror uses LLM integration to generate contextual answers based on your stored 
 
 ## 🏗️ Architecture
 
-Mirror follows a clean separation of responsibilities:
+Mirror follows a clear separation of responsibilities:
 
 - 🅰️ **Angular** delivers the interactive user interface.
 - ⚙️ **ASP.NET Core** handles APIs and business logic.
@@ -110,8 +108,6 @@ Mirror follows a clean separation of responsibilities:
 - 🤖 **LLM integration** enables natural language interaction with user-generated content.
 
 The project was developed incrementally, focusing on maintainability, usability, and continuous improvement.
-
-> **📷 Diagram Suggestion:** Add a simple architecture diagram illustrating the flow between Angular, ASP.NET Core, SQL Server, and the LLM.
 
 ---
 
@@ -130,26 +126,33 @@ Try asking:
 
 ## 📚 What I Learned
 
-Building Mirror reinforced a few key principles:
+Building Mirror reinforced several principles:
 
 - 🌱 Small, consistent improvements create momentum.
 - 🤖 AI delivers the most value when it enhances real workflows.
-- 🎯 Great user experiences are shaped by thoughtful details.
+- 🎯 Great user experiences emerge from thoughtful details.
 - 🚀 Shipping features matters more than chasing perfection.
 - 💪 Confidence grows through building and iteration.
+- 🧠 AI agents work best when guided with clear structure and intent.
+
+---
+
+## 📌 Note on Deployment
+
+Mirror is presented as a portfolio project focused on AI integration and user experience.
+
+Because the application revolves around personal notes and reflections, public deployment was intentionally deferred until proper authentication and user isolation are implemented.
 
 ---
 
 ## 🔮 Future Improvements
 
-Planned enhancements include:
-
-- 🔐 Authentication and user accounts.
+- 🔐 Authentication and user isolation.
 - ✍️ Rich text note editing.
 - 🧠 Semantic and vector-based search.
+- ⚡ Streaming AI responses.
 - 🕒 Enhanced conversation history experience.
-- ☁️ Cloud deployment and public access.
-- ⚡ Streaming AI responses for a more interactive experience.
+- ☁️ Public deployment following secure multi-user support.
 
 ---
 
@@ -181,25 +184,12 @@ ng serve
 
 ---
 
-## 🔗 Deployment
-
-> **🌐 Deployment Link Placeholder:** Add your hosted frontend/backend URLs here when available.
-
----
-
-## 🎥 Demo
-
-> **🎬 Demo Placeholder:** Include a GIF, Loom recording, or YouTube walkthrough demonstrating:
->
-> - Creating a note 📝
-> - Searching notes 🔍
-> - Asking the AI a question 🤖
-> - Viewing conversation history 🕒
-
----
-
 ## ❤️ About Mirror
 
 Mirror is more than a notes app.
 
-It's a space to capture thoughts, revisit ideas, and gain new perspectives from your own writing. By combining note-taking with conversational AI, Mirror transforms personal information into meaningful insights—helping you reflect, remember, and rediscover what matters most. 🪞✨
+It's a space to capture thoughts, revisit ideas, and gain new perspectives from your own writing. By combining note-taking with conversational AI, Mirror transforms personal information into meaningful insights—helping you reflect, remember, and rediscover what matters most.
+
+Sometimes the most interesting questions aren't asked about the world.
+
+Sometimes they're asked about ourselves.
