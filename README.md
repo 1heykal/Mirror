@@ -94,7 +94,7 @@ Mirror uses LLM integration to generate contextual answers based on your stored 
 
 ### 🤖 AI Integration
 
-- Large Language Model (LLM) integration for contextual question answering and note exploration.
+- Google Gemini API for contextual question answering and note exploration.
 
 ---
 
